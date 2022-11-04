@@ -25,7 +25,7 @@
                 {% endfor %}
             {% endif %}
 
-            <form method="post" action="{{ request.get_full_path }}">
+            <form method="post">
               {% csrf_token %}
              
               {% for field in form %}
