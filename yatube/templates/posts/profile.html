@@ -4,13 +4,13 @@
   <h2>Профиль пользователя {{ author.get_full_name}}</h2>
   <h2>Всего постов: {{ author.posts.count }}</h2>
   <hr>
-    {% for post in page_obj %}
-      {% include 'posts/includes/article.html' with show_group=True profile=True %}
-      {% empty %}
+  {% for post in page_obj %}
+    {% include 'posts/includes/article.html' with show_group=True profile=True %}
+    {% empty %}
       <p>Нет Постов</p>
+    {% if not forloop.last %}
+      <hr>
+    {% endif %}
   {% endfor %}
-{% include 'posts/includes/paginator.html' %}
-{% if not forloop.last %}
-    <hr>
-{% endif %} 
+  {% include 'posts/includes/paginator.html' %}
 {% endblock %}

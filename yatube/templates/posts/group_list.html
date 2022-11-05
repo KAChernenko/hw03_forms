@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Здесь будет информация о группах проекта Yatube{% endblock %}
+{% block title %}{{ group.title }}{% endblock %}
 {% block content %}
   <h1>{{ group.title }}</h1>
   <p>{{ group.description }}</p>
@@ -7,7 +7,7 @@
     {% include 'posts/includes/article.html' %}
   {% endfor %}
   {% include 'posts/includes/paginator.html' %}
-  {% if not forloop.last %}
-    <hr>
-  {% endif %}
+    {% if not forloop.last %}
+      <hr>
+    {% endif %}
 {% endblock %}

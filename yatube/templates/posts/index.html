@@ -10,7 +10,7 @@
       <p>Нет Постов</p>
     {% endfor %}
   {% include 'posts/includes/paginator.html' %}
-  {% if not forloop.last %}
-    <hr>
-  {% endif %}
+    {% if not forloop.last %}
+      <hr>
+    {% endif %}
 {% endblock %}
