@@ -1,8 +1,6 @@
 {% extends "base.html" %}
+{% block title %}Последние обновления на сайте{% endblock %}
 {% block content %}
-<title>
-  {% block title %}Последние обновления на сайте{% endblock %}
-</title>
   <h1>Это главная страница проекта Yatube</h1>
     <hr>
     {% for post in page_obj %}
@@ -12,4 +10,7 @@
       <p>Нет Постов</p>
     {% endfor %}
   {% include 'posts/includes/paginator.html' %}
+  {% if not forloop.last %}
+    <hr>
+  {% endif %}
 {% endblock %}

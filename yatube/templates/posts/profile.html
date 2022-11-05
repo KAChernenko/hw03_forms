@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-{% block title %}
-  <title>Профиль</title>
-{% endblock %}
+{% block title %}Профиль{% endblock %}
   <h2>Профиль пользователя {{ author.get_full_name}}</h2>
   <h2>Всего постов: {{ author.posts.count }}</h2>
   <hr>
@@ -12,4 +10,7 @@
       <p>Нет Постов</p>
   {% endfor %}
 {% include 'posts/includes/paginator.html' %}
+{% if not forloop.last %}
+    <hr>
+{% endif %} 
 {% endblock %}
