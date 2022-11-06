@@ -6,11 +6,11 @@
   <hr>
   {% for post in page_obj %}
     {% include 'posts/includes/article.html' with show_group=True profile=True %}
-    {% empty %}
-      <p>Нет Постов</p>
     {% if not forloop.last %}
       <hr>
     {% endif %}
+    {% empty %}
+      <p>Нет Постов</p>
   {% endfor %}
   {% include 'posts/includes/paginator.html' %}
 {% endblock %}
